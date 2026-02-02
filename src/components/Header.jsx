@@ -185,7 +185,7 @@ const Header = () => {
   return (
     <>
       {/* Top Contact Bar */}
-      <div className="bg-maroon-800 text-white hidden md:block">
+      <div className="bg-red-800 text-white hidden md:block">
         <div className="container mx-auto px-4 py-2">
           <div className="flex flex-wrap justify-between items-center text-sm">
             <div className="flex items-center space-x-4">
@@ -224,16 +224,16 @@ const Header = () => {
             <div className="flex items-center">
               <a href="/" className="flex items-center group">
                 <div className="relative">
-                  <span className="text-3xl md:text-4xl font-bold text-maroon-700 tracking-tight">
+                  <span className="text-3xl md:text-4xl font-bold text-red-700 tracking-tight">
                     TOUCH
                   </span>
-                  <div className="absolute -bottom-1 left-0 w-0 group-hover:w-full h-0.5 bg-maroon-600 transition-all duration-300"></div>
+                  <div className="absolute -bottom-1 left-0 w-0 group-hover:w-full h-0.5 bg-red-600 transition-all duration-300"></div>
                 </div>
                 <div className="ml-2">
                   <span className="text-xs md:text-sm font-semibold text-gray-700 tracking-wider block">
                     CONSULTANCY
                   </span>
-                  <div className="h-0.5 w-full bg-maroon-500 mt-0.5"></div>
+                  <div className="h-0.5 w-full bg-red-500 mt-0.5"></div>
                 </div>
               </a>
             </div>
@@ -244,24 +244,24 @@ const Header = () => {
                 <div key={item.name} className="relative group">
                   <a
                     href={item.href}
-                    className="px-4 py-2 text-gray-800 hover:text-maroon-700 font-medium transition-colors relative group"
+                    className="px-4 py-2 text-gray-800 hover:text-red-700 font-medium transition-colors relative group"
                   >
                     {item.name}
                     {/* Animated underline */}
-                    <span className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-0 h-0.5 bg-maroon-600 group-hover:w-3/4 transition-all duration-300"></span>
+                    <span className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-0 h-0.5 bg-red-600 group-hover:w-3/4 transition-all duration-300"></span>
                   </a>
 
                   {/* Dropdown Menu */}
                   {item.hasDropdown && item.dropdownItems && (
                     <div className="absolute left-0 top-full pt-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform group-hover:translate-y-0 translate-y-2">
-                      <div className="bg-white rounded-lg shadow-xl border border-gray-100 min-w-[220px] py-2">
+                      <div className="bg-white rounded-lg shadow-xl border border-gray-100 min-w-55 py-2">
                         {item.dropdownItems.map((dropdownItem) => (
                           <a
                             key={dropdownItem.name}
                             href={dropdownItem.href}
-                            className="flex items-center px-4 py-3 text-gray-700 hover:bg-maroon-50 hover:text-maroon-700 transition-colors group/item"
+                            className="flex items-center px-4 py-3 text-gray-700 hover:bg-red-50 hover:text-red-700 transition-colors group/item"
                           >
-                            <span className="mr-3 text-maroon-600">
+                            <span className="mr-3 text-red-600">
                               {dropdownItem.icon}
                             </span>
                             <span>{dropdownItem.name}</span>
@@ -279,7 +279,7 @@ const Header = () => {
               {/* Contact Us Button */}
               <a
                 href="/contact"
-                className="ml-4 px-6 py-2.5 bg-gradient-to-r from-maroon-700 to-maroon-600 text-white font-semibold rounded-lg hover:from-maroon-800 hover:to-maroon-700 transition-all duration-300 transform hover:-translate-y-0.5 shadow-md hover:shadow-lg"
+                className="ml-4 px-6 py-2.5 bg-linear-to-r from-red-700 to-red-600 text-white font-semibold rounded-lg hover:from-red-800 hover:to-red-700 transition-all duration-300 transform hover:-translate-y-0.5 shadow-md hover:shadow-lg"
               >
                 Contact Us
               </a>
@@ -287,7 +287,7 @@ const Header = () => {
 
             {/* Mobile Menu Button */}
             <button
-              className="lg:hidden p-2 text-gray-700 hover:text-maroon-700 transition-colors"
+              className="lg:hidden p-2 text-gray-700 hover:text-red-700 transition-colors"
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
               aria-label="Toggle menu"
             >
@@ -298,7 +298,7 @@ const Header = () => {
           {/* Mobile Navigation Menu */}
           <div
             className={`lg:hidden overflow-hidden transition-all duration-300 ${
-              isMobileMenuOpen ? "max-h-[800px] py-4" : "max-h-0"
+              isMobileMenuOpen ? "max-h-200 py-4" : "max-h-0"
             }`}
           >
             <div className="border-t border-gray-100 pt-4">
@@ -307,14 +307,14 @@ const Header = () => {
                   <div className="flex items-center justify-between">
                     <a
                       href={item.href}
-                      className="block py-3 px-4 text-gray-800 hover:text-maroon-700 font-medium transition-colors w-full"
+                      className="block py-3 px-4 text-gray-800 hover:text-red-700 font-medium transition-colors w-full"
                       onClick={handleNavClick}
                     >
                       {item.name}
                     </a>
                     {item.hasDropdown && (
                       <button
-                        className="p-3 text-gray-500 hover:text-maroon-700 transition-colors"
+                        className="p-3 text-gray-500 hover:text-red-700 transition-colors"
                         onClick={() => handleDropdownToggle(item.name)}
                         aria-label={`Toggle ${item.name} dropdown`}
                       >
@@ -331,9 +331,7 @@ const Header = () => {
                   {item.hasDropdown && item.dropdownItems && (
                     <div
                       className={`overflow-hidden transition-all duration-300 ${
-                        activeDropdown === item.name
-                          ? "max-h-[500px]"
-                          : "max-h-0"
+                        activeDropdown === item.name ? "max-h-125" : "max-h-0"
                       }`}
                     >
                       <div className="bg-gray-50 rounded-lg ml-4 mr-2 my-2">
@@ -341,10 +339,10 @@ const Header = () => {
                           <a
                             key={dropdownItem.name}
                             href={dropdownItem.href}
-                            className="flex items-center py-3 px-6 text-gray-700 hover:text-maroon-700 hover:bg-maroon-50 transition-colors border-b border-gray-100 last:border-b-0"
+                            className="flex items-center py-3 px-6 text-gray-700 hover:text-red-700 hover:bg-red-50 transition-colors border-b border-gray-100 last:border-b-0"
                             onClick={handleNavClick}
                           >
-                            <span className="mr-3 text-maroon-600">
+                            <span className="mr-3 text-red-600">
                               {dropdownItem.icon}
                             </span>
                             <span>{dropdownItem.name}</span>
@@ -360,7 +358,7 @@ const Header = () => {
               <div className="mt-4 px-4">
                 <a
                   href="/contact"
-                  className="block w-full text-center py-3 bg-gradient-to-r from-maroon-700 to-maroon-600 text-white font-semibold rounded-lg hover:from-maroon-800 hover:to-maroon-700 transition-all duration-300 shadow-md"
+                  className="block w-full text-center py-3 bg-linear-to-r from-red-700 to-red-600 text-white font-semibold rounded-lg hover:from-red-800 hover:to-red-700 transition-all duration-300 shadow-md"
                   onClick={handleNavClick}
                 >
                   Contact Us
@@ -372,16 +370,16 @@ const Header = () => {
                 <div className="space-y-3">
                   <a
                     href={`tel:${contactInfo.phone}`}
-                    className="flex items-center text-gray-700 hover:text-maroon-700"
+                    className="flex items-center text-gray-700 hover:text-red-700"
                   >
-                    <Phone className="w-5 h-5 mr-3 text-maroon-600" />
+                    <Phone className="w-5 h-5 mr-3 text-red-600" />
                     <span>{contactInfo.phone}</span>
                   </a>
                   <a
                     href={`mailto:${contactInfo.email}`}
-                    className="flex items-center text-gray-700 hover:text-maroon-700"
+                    className="flex items-center text-gray-700 hover:text-red-700"
                   >
-                    <Mail className="w-5 h-5 mr-3 text-maroon-600" />
+                    <Mail className="w-5 h-5 mr-3 text-red-600" />
                     <span>{contactInfo.email}</span>
                   </a>
                 </div>

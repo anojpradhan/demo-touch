@@ -19,7 +19,7 @@ const AppLayout = ({ children }) => {
                   <span className="text-sm font-semibold text-gray-300 tracking-wider block">
                     CONSULTANCY
                   </span>
-                  <div className="h-0.5 w-full bg-maroon-500 mt-0.5"></div>
+                  <div className="h-0.5 w-full bg-red-500 mt-0.5"></div>
                 </div>
               </div>
               <p className="mt-4 text-gray-400 max-w-md">
