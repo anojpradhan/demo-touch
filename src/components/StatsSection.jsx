@@ -30,7 +30,7 @@ const StatsSection = () => {
     },
     {
       icon: <BookOpen className="w-8 h-8" />,
-      value: "98%",
+      value: "95%",
       label: "Success Rate",
       color: "bg-emerald-100 text-emerald-700",
     },

@@ -28,7 +28,7 @@ const PartnersSection = () => {
             Institutions
           </h2>
           <p className="text-gray-600 max-w-2xl mx-auto">
-            We collaborate with top universities and organizations worldwide to
+            We collaborate with top universities worldwide to
             provide the best opportunities
           </p>
         </div>
