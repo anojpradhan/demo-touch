@@ -1,3 +1,4 @@
+import { ArrowRight } from "lucide-react";
 
 const Cta = () => {
   return (
